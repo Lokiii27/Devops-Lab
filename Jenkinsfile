@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build done'
+                bat 'javac exJava.java'
             }
         }
         stage('Test') {
@@ -17,9 +18,10 @@ pipeline {
                 echo 'Test done'
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                echo 'Deploy done'
+                echo 'Running.com '
+                bat 'java exJava'
             }
         }
     }
